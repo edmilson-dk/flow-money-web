@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    transition: background-color .4s ease-in-out;
   }
 
   body {
@@ -23,6 +24,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     display: block;
+  }
+
+  body, h1, h2, h3, h4, button, input {
+    font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
   }
 
   button {
