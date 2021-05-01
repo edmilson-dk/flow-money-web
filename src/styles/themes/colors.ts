@@ -1,13 +1,19 @@
-export const light = {
-  "bg-primary": "rgba(250, 250, 250, 0.97)",
-  "bg-secondary": "#F9F9F9",
-  "text": "#585757",
+export const lightTheme = {
+  title: "light",
+  colors: {
+    "bgPrimary": "rgba(250, 250, 250, 0.97)",
+    "bgSecondary": "#F9F9F9",
+    "text": "#585757",
+  }
 };
 
-export const dark = {
-  "bg-primary": "#110F0F",
-  "bg-secondary": "#2B2A2A",
-  "text": "#E5E5E5",
+export const darkTheme = {
+  title: "dark",
+  colors: {
+    "bgPrimary": "#110F0F",
+    "bgSecondary": "#2B2A2A",
+    "text": "#E5E5E5",
+  }
 }
 
 export const defaultColors = {
