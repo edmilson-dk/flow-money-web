@@ -17,14 +17,15 @@ const defaultColors = {
   "green-100": "rgba(33, 207, 143, 0.78)",
   "red-200": "#F03C47",
   "red-100": "rgba(240, 60, 71, 0.96)",
+  white: "#F9F9F9",
 }
 
 export const lightTheme = {
   title: "light",
   colors: {
-    "bgPrimary": "rgba(250, 250, 250, 0.97)",
-    "bgSecondary": "#F9F9F9",
-    "text": "#585757",
+    bgPrimary: "rgba(250, 250, 250, 0.97)",
+    bgSecondary: "#F9F9F9",
+    text: "#585757",
     ...defaultColors
   }
 };
@@ -32,9 +33,9 @@ export const lightTheme = {
 export const darkTheme = {
   title: "dark",
   colors: {
-    "bgPrimary": "#110F0F",
-    "bgSecondary": "#2B2A2A",
-    "text": "#E5E5E5",
+    bgPrimary: "#110F0F",
+    bgSecondary: "#2B2A2A",
+    text: "#E5E5E5",
     ...defaultColors
   }
 }
@@ -42,9 +43,9 @@ export const darkTheme = {
 export type ThemeColorsType = {
   title: string,
   colors: {
-    "bgPrimary": string,
-    "bgSecondary": string,
-    "text": string,
+    bgPrimary: string,
+    bgSecondary: string,
+    text: string,
     "pink-400": string,
     "pink-300": string,
     "pink-200": string,
@@ -63,5 +64,6 @@ export type ThemeColorsType = {
     "green-100": string,
     "red-200": string,
     "red-100": string,
+    white: string,
   }
 }
