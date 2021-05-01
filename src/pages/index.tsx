@@ -1,10 +1,9 @@
-import styled from 'styled-components'
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`
+import { useContext } from "react";
+import { Header } from "src/components/generic/Header";
+import { CustomThemeContext } from "src/contexts/CustomThemeContext";
 
 export default function Home() {
-  return <Title>My page</Title>
+  const { toggleTheme } = useContext(CustomThemeContext);
+
+  return <Header toggleTheme={toggleTheme}/>
 }
