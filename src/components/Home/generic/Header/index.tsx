@@ -1,17 +1,17 @@
-import Link from "next/link"
+import { Container } from "src/styles/components/Container";
+import { HeaderContainer, HeaderWrapper } from "src/styles/components/Home/generic/Header";
+import { Button } from "../Button";
+import { SwitchThemeButton } from "src/components/generic/SwitchThemeButton";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
-
-import { Container } from "src/styles/components/Container";
-import { HeaderWrapper, HeaderContainer } from "src/styles/components/generic/Header";
 
 type HeaderProps = {
   toggleTheme: () => void;
 }
 
 export function Header({ toggleTheme }: HeaderProps) {
-  const { title } = useContext(ThemeContext);
-
+  const { colors } = useContext(ThemeContext);
+  console.log(colors)
   return (
     <HeaderWrapper>
       <Container>
@@ -20,22 +20,13 @@ export function Header({ toggleTheme }: HeaderProps) {
             <img src="/svg/logo.svg" alt="Flow Money Logo tipo" />
           </div>
           <nav>
-            <button onClick={toggleTheme}>
-              {
-                title === "dark" ? (
-                  <span>
-                    <img src="/svg/theme-switch-light.svg" />
-                  </span>
-                ) : (
-                  <span>
-                    <img src="/svg/theme-switch-dark.svg" />
-                  </span>
-                )
-              }
-            </button>
-            <Link href="/user/login">
-              <a>Entrar</a>
-            </Link>
+            <SwitchThemeButton toggleTheme={toggleTheme}/>
+            <Button
+              isRouterButton={true}
+              routerButton="/user/login"
+              text="Entrar"
+              bg={colors["pink-400"]}
+            />
           </nav>
         </HeaderContainer>
       </Container>
