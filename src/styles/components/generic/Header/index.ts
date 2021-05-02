@@ -31,6 +31,10 @@ export const HeaderContainer = styled.div`
     height: auto;
     max-width: 200px;
 
+    @media screen and (max-width: 620px) {
+      max-width: 170px;
+    }
+
     > img {
       object-fit: cover;
       width: 100%;
