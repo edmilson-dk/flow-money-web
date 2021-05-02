@@ -44,6 +44,14 @@ const GlobalStyle = createGlobalStyle`
     display: block;
   }
 
+  p {
+    line-height: 1.4;
+  }
+
+  img {
+    display: block;
+  }
+
   body, h1, h2, h3, h4, button, input {
     font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
   }
