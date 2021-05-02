@@ -5,7 +5,8 @@ type TitleProps = {
 };
 
 export const TitlePrimary = styled.h1<TitleProps>`
-  font-size: 4.0625rem;
+  font-size: 3.75rem;
+  line-height: 3.75rem;
   font-weight: 700;
   color: ${({ color, theme }) => color ?? theme.colors["violet-300"]};
   text-align: center;
