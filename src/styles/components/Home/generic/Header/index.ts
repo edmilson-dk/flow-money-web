@@ -9,6 +9,11 @@ export const HeaderWrapper = styled.header`
   align-items: center;
 
   background-color: ${({ theme }) => theme.colors.bgPrimary};
+  
+  &,
+  > * {
+    z-index: 999;
+  }
 `;
 
 export const HeaderContainer = styled.div`
