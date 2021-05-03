@@ -1,3 +1,4 @@
+import { BgCircle } from "src/styles/components/BgCircle";
 import { Container } from "src/styles/components/Container";
 import { BannerContainer, BannerWrapper } from "src/styles/components/Home/Banner";
 import { TitlePrimary } from "src/styles/components/titles";
@@ -22,6 +23,7 @@ export function Banner() {
           </div>
         </BannerContainer>
       </Container>
+      <BgCircle />
     </BannerWrapper>
   );
 }
