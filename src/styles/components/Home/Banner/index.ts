@@ -36,6 +36,7 @@ export const BannerContainer = styled.section`
   > div {
     width: 50%;
     max-width: 300px;
+    z-index: 9999;
   }
 
   > div img {
