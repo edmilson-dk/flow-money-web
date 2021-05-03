@@ -9,6 +9,7 @@ export const ServicesWrapper = styled.section`
 export const ServicesContainer = styled.div`
   width: 100%;
   
+  padding: 0 1rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1.875rem;
@@ -17,6 +18,10 @@ export const ServicesContainer = styled.div`
   padding-top: 1.875rem;
   
   @media screen and (max-width: 980px) {
-    grid-template-columns: repeat(2, 320px);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 720px) {
+    grid-template-columns: 1fr;
   }
 `;

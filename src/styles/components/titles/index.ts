@@ -11,6 +11,11 @@ export const TitlePrimary = styled.h1<TitleProps>`
   color: ${({ color, theme }) => color ?? theme.colors["violet-300"]};
   text-align: center;
   margin-bottom: 1.875rem;
+
+  @media screen and (max-width: 720px) {
+    font-size: 3.125rem;
+    line-height: 3.125rem;
+  }
 `;
 
 export const TitleSecondary = styled.h2<TitleProps>`
@@ -30,5 +35,10 @@ export const TitleSecondary = styled.h2<TitleProps>`
     height: 10px;
     transform: skewX(-45deg);
     background-color: ${({ theme }) => theme.colors["green-200"]};
+  }
+
+  @media screen and (max-width: 720px) {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
   }
 `;

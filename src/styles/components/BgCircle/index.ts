@@ -10,4 +10,8 @@ export const BgCircle = styled.div`
   right: 0;
   background-color: ${({ theme }) => theme.colors["violet-100"]};
   z-index: 1;
+
+  @media screen and (max-width: 980px) {
+    display: none;
+  }
 `;

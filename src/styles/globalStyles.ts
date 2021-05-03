@@ -21,24 +21,6 @@ const GlobalStyle = createGlobalStyle`
     font-size: 100%;
   }
 
-  @media screen and (max-width: 1100px) { 
-    html {
-      font-size: 93.75%; /* 15px */
-    }
-  }
-
-  @media screen and (max-width: 980px){
-    html {
-      font-size: 87.5%; /* 14px */
-    }
-  }
-
-  @media screen and (max-width: 740px){
-    html {
-      font-size: 81.25%; /* 13px */
-    }
-  }
-
   a {
     text-decoration: none;
     display: block;
