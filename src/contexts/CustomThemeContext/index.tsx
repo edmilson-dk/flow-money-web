@@ -1,5 +1,4 @@
 import { createContext, Dispatch, ReactNode, SetStateAction } from "react";
-import { useCustomTheme } from "src/hooks/useCustomTheme";
 import { darkTheme, lightTheme, ThemeColorsType } from "src/styles/themes/colors";
 
 type CustomThemeContext = {
