@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const BannerWrapper = styled.main`
   width: 100%;
   height: calc(100vh - 80px);
-  padding: 3%.75rem 0;
+  padding: 3.75rem 0;
   background-color: ${({ theme }) => theme.colors.bgPrimary};
 
   display: flex;
