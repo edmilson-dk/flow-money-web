@@ -11,7 +11,7 @@ type HeaderProps = {
 
 export function Header({ toggleTheme }: HeaderProps) {
   const { colors } = useContext(ThemeContext);
-  console.log(colors)
+  
   return (
     <HeaderWrapper>
       <Container>
