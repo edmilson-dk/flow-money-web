@@ -5,6 +5,7 @@ export const AuthFormWrapper = styled.form`
   max-width: 380px;
   border-radius: 20px;
   padding: 1rem;
+  margin: 3.75rem auto 0 auto;
 
   display: flex;
   flex-direction: column;
