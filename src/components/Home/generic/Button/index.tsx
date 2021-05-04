@@ -6,20 +6,21 @@ type ButtonProps = {
   routerButton?: string;
   text: string;
   bg?: string;
+  upper?: boolean;
 }
 
-export function Button({ isRouterButton, routerButton, text, bg }: ButtonProps) {
+export function Button({ isRouterButton, routerButton, text, bg, upper }: ButtonProps) {
   return (
     <>
       {
         isRouterButton ? (
           <Link href={routerButton}>
-            <ButtonWrapper bg={bg}>
+            <ButtonWrapper bg={bg} upper={upper}>
               { text }
             </ButtonWrapper>
           </Link>
         ) : (
-          <ButtonWrapper bg={bg}>
+          <ButtonWrapper bg={bg} upper={upper}>
             { text }
           </ButtonWrapper>
         )
