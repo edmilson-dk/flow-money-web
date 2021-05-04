@@ -11,7 +11,11 @@ export default function Home() {
 
   return (
     <main>
-      <Header toggleTheme={toggleTheme} />
+      <Header 
+        toggleTheme={toggleTheme}
+        buttonText="Entrar"
+        buttonRouter="/user/login"
+      />
       <Banner />
       <Services />
     </main>
