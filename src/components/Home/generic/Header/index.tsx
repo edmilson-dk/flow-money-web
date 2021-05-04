@@ -7,9 +7,11 @@ import { ThemeContext } from "styled-components";
 
 type HeaderProps = {
   toggleTheme: () => void;
+  buttonText: string;
+  buttonRouter: string;
 }
 
-export function Header({ toggleTheme }: HeaderProps) {
+export function Header({ toggleTheme, buttonText, buttonRouter }: HeaderProps) {
   const { colors } = useContext(ThemeContext);
   
   return (
@@ -23,8 +25,8 @@ export function Header({ toggleTheme }: HeaderProps) {
             <SwitchThemeButton toggleTheme={toggleTheme}/>
             <Button
               isRouterButton={true}
-              routerButton="/user/login"
-              text="Entrar"
+              routerButton={buttonRouter}
+              text={buttonText}
               bg={colors["pink-400"]}
             />
           </nav>
