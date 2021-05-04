@@ -16,6 +16,7 @@ export function Banner() {
               isRouterButton={true} 
               routerButton="/user/register" 
               text="Começar"
+              upper={true}
             />
           </article>
           <div>
