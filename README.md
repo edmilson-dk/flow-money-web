@@ -22,7 +22,7 @@ The project is still under construction!
 
 View the online website on the [Vercel](https://vercel.com/) server
 
-[Doctor Cycle web site](https://flow-money-web.vercel.app/)
+[Flow Money web site](https://flow-money-web.vercel.app/)
 
 <a id="features"></a>
 ## 🚀 Functionalities
