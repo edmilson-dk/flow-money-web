@@ -1,78 +1,63 @@
-# Example app with styled-components
+# Flow Money - Website
 
-This example features how you use a different styling solution than [styled-jsx](https://github.com/zeit/styled-jsx) that also supports universal styles. That means we can serve the required styles for the first render within the HTML and then load the rest in the client. In this case we are using [styled-components](https://github.com/styled-components/styled-components).
+<p align="center">
+  <img src="https://img.shields.io/static/v1?label=Flow-Money&message=Welcome&color=FFFFFF&labelColor=00AACC" alt="PRs welcome!" />
+  <img alt="License" src="https://img.shields.io/static/v1?label=version&message=1.0&color=FFFFFF&labelColor=00AACC">
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=FFFFFF&labelColor=00AACC">
+  <img alt="Stars" src="https://img.shields.io/github/stars/edmilson-dk/flow-money-web?color=FFFFFF&labelColor=00AACC">
+  <img alt="Languages" src="https://img.shields.io/github/languages/count/edmilson-dk/flow-money-web?color=FFFFFF&labelColor=00AACC">
+</p>
 
-For this purpose we are extending the `<Document />` and injecting the server side rendered styles into the `<head>`, and also adding the `babel-plugin-styled-components` (which is required for server side rendering). Additionally we set up a global [theme](https://www.styled-components.com/docs/advanced#theming) for styled-components using NextJS custom [`<App>`](https://nextjs.org/docs/advanced-features/custom-app) component.
+The project is still under construction!
 
-## Deploy your own
+## Topics 
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+* [Demo](#demo)
+* [Features](#features)
+* [Installation](#install)
+* [License](#license)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-styled-components&project-name=with-styled-components&repository-name=with-styled-components)
+<a id="demo"></a>
+## 🎉 Demo
 
-## How to use
+View the online website on the [Vercel](https://vercel.com/) server
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+[Doctor Cycle web site](https://flow-money-web.vercel.app/)
 
-```bash
-npx create-next-app --example with-styled-components with-styled-components-app
-# or
-yarn create next-app --example with-styled-components with-styled-components-app
+<a id="features"></a>
+## 🚀 Functionalities
+
+> The project does not have any functionality, as it is just a common web site with no actions.
+
+<a id="install"></a>
+## 👷 Installation and use
+
+* 1 First clone the repository for your machine.
+
+```sh
+git clone https://github.com/edmilson-dk/flow-money-web
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+* 2 After that, enter the generated folder and install the project dependencies.
 
-### Try it on CodeSandbox
+> You will need to have [Nodejs](https://nodejs.org/) installed on your machine, and [yarn](https://yarnpkg.com/) if you want to use it to install dependencies.
 
-[Open this example on CodeSandbox](https://codesandbox.io/s/github/vercel/next.js/tree/canary/examples/with-styled-components)
+```sh
+npm install 
+# or with yarn
+yarn install
+```
+* 3 After that start the nextjs server and open the browser on host http://localhost:3000.
 
-### Notes
-
-When wrapping a [Link](https://nextjs.org/docs/api-reference/next/link) from `next/link` within a styled-component, the [as](https://styled-components.com/docs/api#as-polymorphic-prop) prop provided by `styled` will collide with the Link's `as` prop and cause styled-components to throw an `Invalid tag` error. To avoid this, you can either use the recommended [forwardedAs](https://styled-components.com/docs/api#forwardedas-prop) prop from styled-components or use a different named prop to pass to a `styled` Link.
-
-<details>
-<summary>Click to expand workaround example</summary>
-<br />
-
-**components/StyledLink.js**
-
-```javascript
-import Link from 'next/link'
-import styled from 'styled-components'
-
-const StyledLink = ({ as, children, className, href }) => (
-  <Link href={href} as={as} passHref>
-    <a className={className}>{children}</a>
-  </Link>
-)
-
-export default styled(StyledLink)`
-  color: #0075e0;
-  text-decoration: none;
-  transition: all 0.2s ease-in-out;
-
-  &:hover {
-    color: #40a9ff;
-  }
-
-  &:focus {
-    color: #40a9ff;
-    outline: none;
-    border: 0;
-  }
-`
+```sh
+npm dev 
+# or with yarn 
+yarn dev
 ```
 
-**pages/index.js**
+<a id="license"></a>
+## 🤝 License
 
-```javascript
-import StyledLink from '../components/StyledLink'
+[MIT](https://github.com/edmilson-dk/flow-money-web/blob/main/LICENSE) Project License
 
-export default () => (
-  <StyledLink href="/post/[pid]" forwardedAs="/post/abc">
-    First post
-  </StyledLink>
-)
-```
-
-</details>
+Creator with 💙 by [Edmilson Jesus](https://www.linkedin.com/in/edmilson-jesus-4128711b5)
