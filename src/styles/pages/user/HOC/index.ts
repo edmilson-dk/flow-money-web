@@ -23,6 +23,10 @@ export const UserFormAuthHocContainer = styled.div`
   align-items: center;
 
   > main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 100%;
   }
 `;
