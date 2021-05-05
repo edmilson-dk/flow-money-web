@@ -4,7 +4,7 @@ import { CustomThemeContext } from "src/contexts/CustomThemeContext";
 import { Container } from "src/styles/components/Container";
 import { UserFormAuthHocContainer, UserFormAuthHocWrapper } from "src/styles/pages/user/HOC";
 
-export function UserFormAuthHoc(WrappedComponent: any) {
+export default function UserFormAuthHoc(WrappedComponent: any) {
   return () => {
     const { toggleTheme } = useContext(CustomThemeContext);
 

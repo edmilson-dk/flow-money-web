@@ -6,7 +6,7 @@ import { AuthButton } from "src/components/AuthForm/AuthButton";
 import { AuthInput } from "src/components/AuthForm/AuthInput";
 import { AuthUserContext } from "src/contexts/AuthUserContext";
 import { TitleSecondary } from "src/styles/components/titles";
-import { UserFormAuthHoc } from "./_HOC";
+import UserFormAuthHoc from "./_HOC";
 
 function Register() {
   const { signUp } = useContext(AuthUserContext);
