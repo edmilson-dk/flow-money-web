@@ -33,7 +33,7 @@ export function PrivateRouter(WrappedComponent: any) {
 
       if (auth.isExpired) redirectToLogin(ctx.res, "/user/login");
 
-      const wrappedProps = WrappedComponent.getInitialProps && (await WrappedComponent.getInitialProps({ auth }));
+      const wrappedProps = WrappedComponent.getStaticProps && (await WrappedComponent.getStaticProps({ auth }));
   
       return { ...wrappedProps, token };
     }
@@ -43,7 +43,7 @@ export function PrivateRouter(WrappedComponent: any) {
     }
 
     render() {
-      return <WrappedComponent {...this.state.auth}/>
+      return <WrappedComponent {...this.state }/>
     }
   }
 }
