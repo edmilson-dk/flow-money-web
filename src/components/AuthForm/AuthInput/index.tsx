@@ -1,4 +1,4 @@
-import { ChangeEvent } from "react";
+import { ChangeEvent, MutableRefObject } from "react";
 import { AuthInputWrappper } from "src/styles/components/AuthForm/AuthInput";
 
 type AuthInputProps = {
