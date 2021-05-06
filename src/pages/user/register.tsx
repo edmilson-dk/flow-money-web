@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
-import { toast } from "react-toastify";
 
 import { AuthForm } from "src/components/AuthForm";
 import { AuthButton } from "src/components/AuthForm/AuthButton";
 import { AuthInput } from "src/components/AuthForm/AuthInput";
 import { AuthUserContext } from "src/contexts/AuthUserContext";
+import { UserFormAuthHoc } from "src/hoc-components/UserFormAuthHoc";
 import { TitleSecondary } from "src/styles/components/titles";
-import UserFormAuthHoc from "./_HOC";
 
 function Register() {
   const { signUp } = useContext(AuthUserContext);

@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
+
 import { AuthForm } from "src/components/AuthForm";
 import { AuthButton } from "src/components/AuthForm/AuthButton";
 import { AuthInput } from "src/components/AuthForm/AuthInput";
 import { AuthUserContext } from "src/contexts/AuthUserContext";
+import { UserFormAuthHoc } from "src/hoc-components/UserFormAuthHoc";
 import { TitleSecondary } from "src/styles/components/titles";
-import UserFormAuthHoc from "./_HOC";
 
 function Login() {
   const { signIn } = useContext(AuthUserContext);
