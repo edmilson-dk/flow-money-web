@@ -1,3 +1,4 @@
+import { ArrowDown } from "src/components/ArrowDown";
 import { BgCircle } from "src/styles/components/BgCircle";
 import { Container } from "src/styles/components/Container";
 import { BannerContainer, BannerWrapper } from "src/styles/components/Home/Banner";
@@ -22,6 +23,7 @@ export function Banner() {
           <div>
             <img src="/png/bg-banner.png" alt="Flow money" />
           </div>
+          <ArrowDown />
         </BannerContainer>
       </Container>
       <BgCircle />
