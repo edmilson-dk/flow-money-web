@@ -8,5 +8,5 @@ export const DashBoardHeader = styled.header`
   display: grid;
   grid-template-columns: repeat(3,1fr);
   column-gap: 1.875rem;
-  padding: 0 1.875rem;
+  padding: 0 60px;
 `;
