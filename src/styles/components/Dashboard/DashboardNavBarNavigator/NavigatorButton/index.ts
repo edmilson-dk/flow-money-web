@@ -6,6 +6,7 @@ type Props = {
 
 export const NavigatorButtonWrapper = styled.button<Props>`
   transition: width .3s ease-in-out;
+  width: 70%;
   background-color: ${({ theme, isActive }) => isActive ? theme.colors.white : "transparent"};
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
@@ -17,27 +18,17 @@ export const NavigatorButtonWrapper = styled.button<Props>`
   align-items: center;
   padding: 0.5rem 1rem;
 
-  ${({ isActive, theme }) => !isActive && css`
-    &:hover,
-    &:focus {
-      width: 35%;
-    }
-  `};
 
   ${({ isActive, theme }) => isActive ? css`
-    width: 70%;
     border: none;
   ` : css`
-    width: 30%;
     border: 1px solid ${theme.colors["violet-200"]};
   `};
 
   > strong {
     font-size: 1.125rem;
     font-weight: 600;
-    color: ${({ theme }) => theme.colors["green-300"]};
-
-     ${({ isActive, theme }) => isActive ? css`display: inline`: css`display: none;`};
+    color: ${({ theme, isActive }) => isActive ? theme.colors["green-300"] : theme.colors.white};
   }
 
   > span {
