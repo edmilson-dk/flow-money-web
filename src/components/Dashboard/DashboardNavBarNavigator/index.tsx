@@ -1,7 +1,6 @@
-import { ReactChildren, ReactNode } from "react";
+import {  ReactNode } from "react";
 
 import { DashboardNavBarNavigatorWrapper } from "src/styles/components/Dashboard/DashboardNavBarNavigator";
-import { NavigatorButton } from "./NavigatorButton";
 
 type DashboardNavBarNavigatorProps = {
   children: ReactNode;
