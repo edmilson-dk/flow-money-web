@@ -16,7 +16,7 @@ export function DashboardValueBox({ title, icon, value, bg }: DashboardValueBoxP
         <h3>{ title }</h3>
         <span>{ icon }</span>
       </header>
-      <h2>{ value }</h2>
+      <h2>R$ { value }</h2>
     </DashboardValueBoxWrapper>
   )
 }
