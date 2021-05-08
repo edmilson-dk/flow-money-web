@@ -22,7 +22,7 @@ function DashBoard({ auth }) {
           title="Saídas"
           icon={<FiArrowDownCircle size="100%"/>}
           value={1000}
-          bg={colors["red-200"]}
+          bg={colors["red-100"]}
         />
         <DashboardValueBox
           title="Total"
