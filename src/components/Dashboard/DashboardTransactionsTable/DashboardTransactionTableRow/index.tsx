@@ -6,7 +6,7 @@ export function DashboardTransactionTableRow({ title, category, value, isDecreme
     <DashboardTransactionTableRowWrapper>
       <td>{title}</td>
       <td>{ category }</td>
-      <td>{ value }</td>
+      <td id={isDecrement ? "isDecrement" : "notIsDecrement"}>{ value }</td>
       <td>{ createdAt }</td>
     </DashboardTransactionTableRowWrapper>
   );

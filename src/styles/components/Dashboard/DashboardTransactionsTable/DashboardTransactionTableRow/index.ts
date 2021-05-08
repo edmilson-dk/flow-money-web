@@ -7,7 +7,9 @@ export const DashboardTransactionTableRowWrapper = styled.tr`
  
   > td {
     background-color: ${({ theme }) => theme.colors.white};
-    color: ${({ theme }) => theme.colors["gray-300"]};
+    color: ${({ theme }) => theme.colors["gray-200"]};
+    height: 50px;
+    padding: 0 1rem;
   }
 
   > td:first-child {
@@ -18,5 +20,13 @@ export const DashboardTransactionTableRowWrapper = styled.tr`
   > td:last-child {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+  }
+
+  > td#isDecrement {
+    color: ${({ theme }) => theme.colors["red-200"]};
+  }
+
+  > td#notIsDecrement {
+    color: ${({ theme }) => theme.colors["green-300"]};
   }
 `;

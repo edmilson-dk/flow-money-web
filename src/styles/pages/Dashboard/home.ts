@@ -14,4 +14,5 @@ export const DashboardHeader = styled.header`
 `;
 
 export const DashboardContent = styled.section`
+  margin-top: 80px;
 `;

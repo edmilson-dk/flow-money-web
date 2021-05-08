@@ -2,15 +2,14 @@ import styled from "styled-components";
 
 export const DashboardTransactionsTableWrapper = styled.article`
   width: 100%;
-  margin-top: 80px;
 
   > table {
     width: 100%;
     border-collapse: separate;
     border-spacing: 0 10px;
 
-    th, td {
-      padding: 1rem;
+    th {
+      padding: 0.75rem 1rem;
     }
 
     th {
