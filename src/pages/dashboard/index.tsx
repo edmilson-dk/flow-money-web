@@ -10,6 +10,7 @@ import { useFetch } from "src/hooks/useFetch";
 import { PrivateRouter } from "src/router";
 import { DashboardHeader, DashboardContent } from "src/styles/pages/Dashboard/home";
 import { DashboardContainer } from "src/styles/components/Dashboard/DashboardContainer";
+import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 
 type BalanceType = {
   left: number;
@@ -50,6 +51,7 @@ function DashBoard({ auth }) {
       </DashboardHeader>
       <DashboardContent>
         <DashboardContainer>
+          <TitlePrimary>Transações</TitlePrimary>
           <DashboardTransactionsTable data={transactions}/>
         </DashboardContainer>
       </DashboardContent>
