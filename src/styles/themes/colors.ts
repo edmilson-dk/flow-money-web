@@ -18,6 +18,9 @@ const defaultColors = {
   "red-200": "#F03C47",
   "red-100": "rgba(240, 60, 71, 0.96)",
   white: "#F9F9F9",
+  "gray-100": "#E6E8EB",
+  "gray-200": "#808080",
+  "gray-300": "#494D4B"
 }
 
 export const lightTheme = {
@@ -65,5 +68,8 @@ export type ThemeColorsType = {
     "red-200": string,
     "red-100": string,
     white: string,
+    "gray-100": string;
+    "gray-200": string;
+    "gray-300": string;
   }
 }
