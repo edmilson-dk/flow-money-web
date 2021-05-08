@@ -20,5 +20,5 @@ export const DashboardNavBarContent = styled.main`
   width: calc(100% - 280px);
   overflow-y: scroll;
   background-color: ${({ theme }) => theme.colors.white};
-  padding: 60px;
+  padding: 0 60px;
 `;
