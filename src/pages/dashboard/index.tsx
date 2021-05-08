@@ -1,11 +1,15 @@
 import { useContext } from "react";
 import { FiArrowDownCircle, FiArrowUpCircle, FiCreditCard } from "react-icons/fi";
+import { ThemeContext } from "styled-components";
+
 import { DashboardNavBar } from "src/components/Dashboard/DashboardNavBar";
+import { DashboardTransactionsTable } from "src/components/Dashboard/DashboardTransactionsTable";
+import { TransactionProps } from "src/components/Dashboard/DashboardTransactionsTable/DashboardTransactionTableRow/types";
 import { DashboardValueBox } from "src/components/Dashboard/DashboardValueBox";
 import { useFetch } from "src/hooks/useFetch";
 import { PrivateRouter } from "src/router";
-import { DashBoardHeader } from "src/styles/pages/Dashboard/home";
-import { ThemeContext } from "styled-components";
+import { DashboardHeader, DashboardContent } from "src/styles/pages/Dashboard/home";
+import { DashboardContainer } from "src/styles/components/Dashboard/DashboardContainer";
 
 type BalanceType = {
   left: number;
@@ -15,16 +19,15 @@ type BalanceType = {
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
-  const { data: balance } = useFetch<BalanceType>({
-    url: "/session/balance", 
-    headers: {
-      authorization: auth.authorizationString,
-    }
-  });
+  const headers = { authorization: auth.authorizationString };
 
+  const { data: balance } = useFetch<BalanceType>({ url: "/session/balance", headers });
+  const { data: transactions } = useFetch<TransactionProps[]>({ url: "/session/transactions", headers });
+  console.log(transactions)
   return (
     <DashboardNavBar>
-      <DashBoardHeader>
+      <DashboardHeader>
+        <DashboardContainer>
         <DashboardValueBox
           title="Entradas"
           icon={<FiArrowUpCircle size="100%"/>}
@@ -43,7 +46,13 @@ function DashBoard({ auth }) {
           value={balance?.total ?? 0}
           bg={colors["green-300"]}
         />
-      </DashBoardHeader>
+        </DashboardContainer>
+      </DashboardHeader>
+      <DashboardContent>
+        <DashboardContainer>
+          <DashboardTransactionsTable data={transactions}/>
+        </DashboardContainer>
+      </DashboardContent>
     </DashboardNavBar>
   )
 }
