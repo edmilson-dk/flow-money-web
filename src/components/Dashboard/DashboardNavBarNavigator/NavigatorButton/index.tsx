@@ -6,18 +6,17 @@ import { NavigatorButtonWrapper } from "src/styles/components/Dashboard/Dashboar
 type NavigatorButtonProps = {
   router: string;
   icon: ReactNode;
-  marginTop: string;
   text: string;
 };
 
-export function NavigatorButton({ router, icon, marginTop, text }: NavigatorButtonProps) {
+export function NavigatorButton({ router, icon, text }: NavigatorButtonProps) {
   const nextRouter = useRouter();
   const pathname = nextRouter.pathname;
   const formattedRouter = router[0] === "/" ? router.slice(1) : router;
 
   return (
     <Link href={`/${formattedRouter}`}>
-      <NavigatorButtonWrapper isActive={`/${formattedRouter}` === pathname ? true : false} style={{ marginTop }}>
+      <NavigatorButtonWrapper isActive={`/${formattedRouter}` === pathname ? true : false}>
         <span>
           { icon }
         </span>
