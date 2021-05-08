@@ -1,32 +1,16 @@
-import { ReactNode } from "react";
+import { ReactChildren, ReactNode } from "react";
 
 import { DashboardNavBarNavigatorWrapper } from "src/styles/components/Dashboard/DashboardNavBarNavigator";
 import { NavigatorButton } from "./NavigatorButton";
 
-type NavigatorProps = {
-  router: string;
-  icon: ReactNode;
-  text: string;
-}
-
 type DashboardNavBarNavigatorProps = {
-  data: Array<NavigatorProps>;
+  children: ReactNode;
 };
 
-export function DashboardNavBarNavigator({ data }: DashboardNavBarNavigatorProps) {
+export function DashboardNavBarNavigator({ children }: DashboardNavBarNavigatorProps) {
   return (
     <DashboardNavBarNavigatorWrapper>
-      {
-        data.map((navigator, i) => (
-          <NavigatorButton 
-            text={navigator.text}
-            marginTop={`${70 * i}px`}
-            key={navigator.router} 
-            router={navigator.router} 
-            icon={navigator.icon}
-          />
-        ))
-      }
+      { children }
     </DashboardNavBarNavigatorWrapper>
   )
 }
