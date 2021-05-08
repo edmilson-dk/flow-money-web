@@ -5,7 +5,7 @@ type Props = {
 };
 
 export const NavigatorButtonWrapper = styled.button<Props>`
-  transition: width .3s ease-in-out;
+  transition: all .3s ease-in-out;
   width: 70%;
   background-color: ${({ theme, isActive }) => isActive ? theme.colors.white : "transparent"};
   border-top-left-radius: 30px;
@@ -18,6 +18,9 @@ export const NavigatorButtonWrapper = styled.button<Props>`
   align-items: center;
   padding: 0.5rem 1rem;
 
+  & + & {
+    margin-top: 70px;
+  }
 
   ${({ isActive, theme }) => isActive ? css`
     border: none;
