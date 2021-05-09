@@ -1,17 +1,9 @@
-import { createContext, Dispatch, ReactNode, SetStateAction } from "react";
-import { darkTheme, lightTheme, ThemeColorsType } from "src/styles/themes/colors";
+import { createContext } from "react";
 
-type CustomThemeContext = {
-  toggleTheme: () => void;
-}
+import { darkTheme, lightTheme } from "src/styles/themes/colors";
+import { CustomThemeContextProps, CustomThemeContextProviderProps } from "./types";
 
-type CustomThemeContextProviderProps = {
-  children: ReactNode;
-  theme: ThemeColorsType;
-  setTheme: Dispatch<SetStateAction<ThemeColorsType>>;
-}
-
-export const CustomThemeContext = createContext({} as CustomThemeContext);
+export const CustomThemeContext = createContext({} as CustomThemeContextProps);
 
 export function CustomThemeContextProvider({ children, theme, setTheme }: CustomThemeContextProviderProps) {
   function toggleTheme() {
