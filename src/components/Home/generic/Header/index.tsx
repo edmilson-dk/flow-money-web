@@ -1,15 +1,11 @@
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+
 import { Container } from "src/styles/components/Container";
 import { HeaderContainer, HeaderWrapper } from "src/styles/components/Home/generic/Header";
 import { Button } from "../Button";
 import { SwitchThemeButton } from "src/components/generic/SwitchThemeButton";
-import { useContext } from "react";
-import { ThemeContext } from "styled-components";
-
-type HeaderProps = {
-  toggleTheme: () => void;
-  buttonText: string;
-  buttonRouter: string;
-}
+import { HeaderProps } from "./types";
 
 export function Header({ toggleTheme, buttonText, buttonRouter }: HeaderProps) {
   const { colors } = useContext(ThemeContext);
