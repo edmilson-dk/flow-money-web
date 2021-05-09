@@ -21,7 +21,7 @@ type BalanceType = {
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
   const headers = { authorization: auth.authorizationString };
-
+  
   const { data: balance } = useFetch<BalanceType>({ url: "/session/balance", headers });
   const { data: transactions } = useFetch<TransactionProps[]>({ url: "/session/transactions", headers });
   
