@@ -1,17 +1,31 @@
+import { useRef } from "react";
 import {  FiTrash } from "react-icons/fi";
+
+import { AuthToken } from "src/services/authToken";
+import { api } from "src/services/fetchApi";
 
 import { DashboardTransactionTableRowWrapper } from "src/styles/components/Dashboard/DashboardTransactionsTable/DashboardTransactionTableRow";
 import { TransactionProps } from "./types";
 
 export function DashboardTransactionTableRow({ title, category, value, isDecrement, id, createdAt }: TransactionProps) {
+ const trRef = useRef<HTMLTableRowElement>(null);
+ 
+  async function deleteTransaction() {
+    await api.delete(`/session/drop/transaction/${id}`, {
+      headers: { authorization: AuthToken.getStoragedToken(true)},
+    });
+
+    trRef.current.style.display = "none";
+  }
+  
   return (
-    <DashboardTransactionTableRowWrapper>
+    <DashboardTransactionTableRowWrapper ref={trRef}>
       <td>{title}</td>
       <td>{ category }</td>
       <td id={isDecrement ? "isDecrement" : "notIsDecrement"}>{ value }</td>
       <td>{ createdAt }</td>
       <td>
-        <button>
+        <button type="button" onClick={deleteTransaction}>
           <FiTrash size="100%"/>
         </button>
       </td>
