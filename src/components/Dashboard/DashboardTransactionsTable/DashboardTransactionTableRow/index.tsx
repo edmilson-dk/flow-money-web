@@ -1,5 +1,6 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import {  FiTrash } from "react-icons/fi";
+import { BalanceContext } from "src/contexts/BalanceContext";
 
 import { AuthToken } from "src/services/authToken";
 import { api } from "src/services/fetchApi";
@@ -9,13 +10,15 @@ import { formatDate } from "src/utils/formatDate";
 import { TransactionProps } from "./types";
 
 export function DashboardTransactionTableRow({ title, category, value, isDecrement, id, createdAt }: TransactionProps) {
- const trRef = useRef<HTMLTableRowElement>(null);
+  const trRef = useRef<HTMLTableRowElement>(null);
+  const { setChangeTransactionState } = useContext(BalanceContext);
  
   async function deleteTransaction() {
     await api.delete(`/session/drop/transaction/${id}`, {
       headers: { authorization: AuthToken.getStoragedToken(true)},
     });
-
+    
+    setChangeTransactionState(true);
     trRef.current.style.display = "none";
   }
   
