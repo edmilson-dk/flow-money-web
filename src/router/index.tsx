@@ -5,6 +5,7 @@ import { ServerResponse } from "node:http";
 import Router from "next/router";
 
 import { AuthToken, TOKEN_STORED_KEY } from "src/services/authToken";
+import { BalanceContextProvider } from "src/contexts/BalanceContext";
 
 export type AuthProps = {
   token: string;
@@ -63,7 +64,11 @@ export function PrivateRouter(WrappedComponent: any) {
     }
 
     render() {
-      return <WrappedComponent {...this.state }/>
+      return (
+        <BalanceContextProvider>
+          <WrappedComponent {...this.state }/>
+        </BalanceContextProvider>
+      );
     }
   }
 }
