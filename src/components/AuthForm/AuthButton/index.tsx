@@ -1,11 +1,5 @@
 import { AuthButtonWrapper } from "src/styles/components/AuthForm/AuthButton";
-
-type AuthButtonProps = {
-  onClick: () => void;
-  type: string;
-  disabled?: boolean;
-  text: string;
-};
+import { AuthButtonProps } from "./types";
 
 export function AuthButton({ type, disabled, text }: AuthButtonProps) {
   return (
