@@ -1,6 +1,7 @@
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
 import Router from "next/router";
+import { TOKEN_LOGOUT_EVENT_KEY } from "src/router";
 
 type DecodedTokenType = {
   email: string;
@@ -40,13 +41,22 @@ export class AuthToken {
 
   static async storeToken(token: string) {
     Cookies.set(TOKEN_STORED_KEY, token);
-    localStorage.setItem(TOKEN_STORED_KEY, token);
+    window.localStorage.setItem(TOKEN_STORED_KEY, token);
+
     await Router.push("/dashboard");
+  }
+
+  static async logout() {
+    Cookies.remove(TOKEN_STORED_KEY);
+    window.localStorage.removeItem(TOKEN_STORED_KEY);
+    window.localStorage.setItem(TOKEN_LOGOUT_EVENT_KEY, Date.now().toString());
+
+    await Router.push("/user/login");
   }
 
   static getStoragedToken(isBearerFormat: boolean) {
     return isBearerFormat 
-      ? `Bearer ${localStorage.getItem(TOKEN_STORED_KEY)}`
-      : localStorage.getItem(TOKEN_STORED_KEY);
+      ? `Bearer ${window.localStorage.getItem(TOKEN_STORED_KEY)}`
+      : window.localStorage.getItem(TOKEN_STORED_KEY);
   }
 }
