@@ -29,4 +29,15 @@ export const DashboardTransactionTableRowWrapper = styled.tr`
   > td#notIsDecrement {
     color: ${({ theme }) => theme.colors["green-300"]};
   }
+
+  > td button {
+    width: 3.75rem;
+    height: 1.875rem;
+    font-size: 0;
+    background: none;
+
+    > svg {
+      stroke: ${({ theme }) => theme.colors["red-200"]};
+    }
+  }
 `;
