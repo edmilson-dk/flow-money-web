@@ -43,4 +43,10 @@ export class AuthToken {
     localStorage.setItem(TOKEN_STORED_KEY, token);
     await Router.push("/dashboard");
   }
+
+  static getStoragedToken(isBearerFormat: boolean) {
+    return isBearerFormat 
+      ? `Bearer ${localStorage.getItem(TOKEN_STORED_KEY)}`
+      : localStorage.getItem(TOKEN_STORED_KEY);
+  }
 }
