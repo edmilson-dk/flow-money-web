@@ -10,6 +10,8 @@ export type AuthProps = {
   token: string;
 }
 
+export const TOKEN_LOGOUT_EVENT_KEY = "logoutFlowEvent";
+
 function redirectToLogin(server: ServerResponse, redirectRoute: string) {
  if (server) {
     server.writeHead(302, {
@@ -23,6 +25,12 @@ function redirectToLogin(server: ServerResponse, redirectRoute: string) {
 
 export function PrivateRouter(WrappedComponent: any) {
   return class extends Component<AuthProps> {
+    constructor(props) {
+      super(props);
+
+      this.syncLogout = this.syncLogout.bind(this);
+    }
+
     state = {
       auth: new AuthToken(this.props.token),
     };
@@ -38,8 +46,20 @@ export function PrivateRouter(WrappedComponent: any) {
       return { ...wrappedProps, token };
     }
 
+    syncLogout(event) {
+      if (event.key === TOKEN_LOGOUT_EVENT_KEY) {
+        Router.push("/user/login");
+      }
+    }
+
     componentDidMount(): void {
+      window.addEventListener("storage", this.syncLogout);
       this.setState({ auth: new AuthToken(this.props.token)});
+    }
+
+    componentWillUnmount() {
+      window.removeEventListener("storage", this.syncLogout);
+      window.localStorage.removeItem(TOKEN_LOGOUT_EVENT_KEY);
     }
 
     render() {
