@@ -5,6 +5,7 @@ import { AuthToken } from "src/services/authToken";
 import { api } from "src/services/fetchApi";
 
 import { DashboardTransactionTableRowWrapper } from "src/styles/components/Dashboard/DashboardTransactionsTable/DashboardTransactionTableRow";
+import { formatDate } from "src/utils/formatDate";
 import { TransactionProps } from "./types";
 
 export function DashboardTransactionTableRow({ title, category, value, isDecrement, id, createdAt }: TransactionProps) {
@@ -23,7 +24,7 @@ export function DashboardTransactionTableRow({ title, category, value, isDecreme
       <td>{title}</td>
       <td>{ category }</td>
       <td id={isDecrement ? "isDecrement" : "notIsDecrement"}>{ value }</td>
-      <td>{ createdAt }</td>
+      <td>{ formatDate(createdAt) }</td>
       <td>
         <button type="button" onClick={deleteTransaction}>
           <FiTrash size="100%"/>
