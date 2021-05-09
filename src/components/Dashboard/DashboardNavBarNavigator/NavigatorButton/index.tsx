@@ -1,13 +1,8 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { ReactNode } from "react";
-import { NavigatorButtonWrapper } from "src/styles/components/Dashboard/DashboardNavBarNavigator/NavigatorButton";
 
-type NavigatorButtonProps = {
-  router: string;
-  icon: ReactNode;
-  text: string;
-};
+import { NavigatorButtonWrapper } from "src/styles/components/Dashboard/DashboardNavBarNavigator/NavigatorButton";
+import { NavigatorButtonProps } from "./types";
 
 export function NavigatorButton({ router, icon, text }: NavigatorButtonProps) {
   const nextRouter = useRouter();
