@@ -24,7 +24,7 @@ function DashBoard({ auth }) {
 
   const { data: balance } = useFetch<BalanceType>({ url: "/session/balance", headers });
   const { data: transactions } = useFetch<TransactionProps[]>({ url: "/session/transactions", headers });
-  console.log(transactions)
+  
   return (
     <DashboardNavBar>
       <DashboardHeader>
