@@ -1,26 +1,13 @@
-import { createContext, ReactNode, useState } from "react";
+import { createContext } from "react";
+
 import { AuthToken } from "src/services/authToken";
 import { api } from "src/services/fetchApi";
-
-type SignInDataType = {
-  email: string;
-  password: string;
-}
-
-type SignUpDataType = {
-  name: string;
-  email: string;
-  password: string;
-}
-
-type AuthUserContextProps = {
-  signIn: (data: SignInDataType) => Promise<boolean>;
-  signUp: (data: SignUpDataType) => Promise<boolean>;
-};
-
-type AuthUserContextProviderProps = {
-  children: ReactNode;
-}
+import { 
+  AuthUserContextProps, 
+  AuthUserContextProviderProps, 
+  SignInDataType, 
+  SignUpDataType
+} from "./types";
 
 export const AuthUserContext = createContext({} as AuthUserContextProps);
 
