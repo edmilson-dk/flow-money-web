@@ -1,13 +1,5 @@
-import { ReactNode } from "react";
-
 import { DashboardValueBoxWrapper } from "src/styles/components/Dashboard/DashboardValueBox";
-
-type DashboardValueBoxProps = {
-  title: string;
-  icon: ReactNode;
-  value: number;
-  bg: string;
-};
+import { DashboardValueBoxProps } from "./types";
 
 export function DashboardValueBox({ title, icon, value, bg }: DashboardValueBoxProps) {
   return (
