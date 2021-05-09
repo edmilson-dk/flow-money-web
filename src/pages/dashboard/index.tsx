@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { FiArrowDownCircle, FiArrowUpCircle, FiCreditCard } from "react-icons/fi";
 import { ThemeContext } from "styled-components";
 
@@ -11,6 +11,8 @@ import { PrivateRouter } from "src/router";
 import { DashboardHeader, DashboardContent } from "src/styles/pages/Dashboard/home";
 import { DashboardContainer } from "src/styles/components/Dashboard/DashboardContainer";
 import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
+import { BalanceContext } from "src/contexts/BalanceContext";
+import { api } from "src/services/fetchApi";
 
 type BalanceType = {
   left: number;
@@ -20,10 +22,22 @@ type BalanceType = {
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
+  const [ balance, setBalance ] = useState(null);
+  const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
+
   const headers = { authorization: auth.authorizationString };
-  
-  const { data: balance } = useFetch<BalanceType>({ url: "/session/balance", headers });
+  const { data } = useFetch<BalanceType>({ url: "/session/balance", headers });
   const { data: transactions } = useFetch<TransactionProps[]>({ url: "/session/transactions", headers });
+
+  useEffect(() => { setBalance(data) }, []);
+  
+  useEffect(() => {
+    (async () => {
+      const response = await api.get("/session/balance", { headers });
+      setBalance(response.data);
+      setChangeTransactionState(false);
+    })() 
+  }, [ changeTransaction ]);
   
   return (
     <DashboardNavBar>
