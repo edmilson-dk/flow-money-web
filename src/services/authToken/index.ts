@@ -40,6 +40,7 @@ export class AuthToken {
 
   static async storeToken(token: string) {
     Cookies.set(TOKEN_STORED_KEY, token);
+    localStorage.setItem(TOKEN_STORED_KEY, token);
     await Router.push("/dashboard");
   }
 }
