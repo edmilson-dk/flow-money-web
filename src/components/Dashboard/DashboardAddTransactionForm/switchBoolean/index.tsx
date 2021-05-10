@@ -9,12 +9,12 @@ export function TransactionSwitchBoolean({ setState, label }: TransactionSwitchB
     <TransactionSwitchBooleanWrapper>
       <label>{ label }</label>
       <div>
-        <button onClick={() => setState(false)}>
+        <button type="button" onClick={() => setState(false)}>
           <span>
             <FiChevronUp size="100%"/>
           </span>
         </button>
-        <button onClick={() => setState(true)}>
+        <button type="button" onClick={() => setState(true)}>
           <span>
             <FiChevronDown size="100%"/>
           </span>
