@@ -8,7 +8,7 @@ export const TransactionInputWrappper = styled.div`
   justify-content: center;
   
   & + & {
-    margin-top: 15px;
+    margin-top: 20px;
   }
 
   > label {
