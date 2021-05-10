@@ -12,6 +12,5 @@ export const TransactionFormWrapper = styled.form`
   justify-content: center;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.colors.bgSecondary};
-  box-shadow: 0 0 4px 3px rgba(0,0,0,0.090);
+  background-color: ${({ theme }) => theme.colors.white};
 `;
