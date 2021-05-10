@@ -1,5 +1,5 @@
 export type TransactionButtonProps = {
-  onClick: () => void;
+  onClick?: () => void;
   type: "button" | "submit";
   disabled?: boolean;
   text: string;
