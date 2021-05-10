@@ -38,6 +38,7 @@ export function PrivateRouter(WrappedComponent: any) {
 
     static async getInitialProps(ctx: NextPageContext) {
       const token = ServeCookie(ctx)[TOKEN_STORED_KEY];
+      
       const auth = new AuthToken(token);
 
       if (auth.isExpired) redirectToLogin(ctx.res, "/user/login");
