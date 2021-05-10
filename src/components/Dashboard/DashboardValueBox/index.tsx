@@ -8,7 +8,11 @@ export function DashboardValueBox({ title, icon, value, bg }: DashboardValueBoxP
         <h3>{ title }</h3>
         <span>{ icon }</span>
       </header>
-      <h2>R$ { value }</h2>
+      <h2>
+        { value.toLocaleString('pt-br', 
+          { style: "currency", currency: "BRL" })
+        }
+      </h2>
     </DashboardValueBoxWrapper>
   )
 }

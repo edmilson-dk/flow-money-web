@@ -1,7 +1,7 @@
 export type TransactionProps = {
   title: string;
   category: string;
-  value: number;
+  value: string;
   isDecrement: string;
   id: string;
   createdAt: string;

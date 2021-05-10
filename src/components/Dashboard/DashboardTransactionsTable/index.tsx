@@ -25,7 +25,7 @@ export function DashboardTransactionsTable({ data }: DashboardTransactionsTableP
               <DashboardTransactionTableRow 
                 title={transaction.title}
                 category={transaction.category}
-                value={transaction.value}
+                value={Number(transaction.value).toLocaleString("pt-br", { style: "currency", currency: "BRL"})}
                 id={transaction.id}
                 isDecrement={transaction.isDecrement}
                 createdAt={transaction.createdAt}
