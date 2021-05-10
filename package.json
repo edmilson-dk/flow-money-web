@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
-    "date-fns": "^2.21.1",
+    "chart.js": "^3.2.1",
+    "date-fns": "^2.21.3",
     "js-cookie": "^2.2.1",
     "jwt-decode": "^3.1.2",
     "next": "latest",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
+    "@types/chart.js": "^2.9.32",
     "@types/date-fns": "^2.6.0",
     "@types/js-cookie": "^2.2.6",
     "@types/jwt-decode": "^3.1.0",
