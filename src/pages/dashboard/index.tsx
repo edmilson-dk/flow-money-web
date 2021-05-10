@@ -43,24 +43,24 @@ function DashBoard({ auth }) {
     <DashboardNavBar>
       <DashboardHeader>
         <DashboardContainer>
-        <DashboardValueBox
-          title="Entradas"
-          icon={<FiArrowUpCircle size="100%"/>}
-          value={balance?.joined ?? 0}
-          bg={colors["orange-300"]}
-        />
-        <DashboardValueBox
-          title="Saídas"
-          icon={<FiArrowDownCircle size="100%"/>}
-          value={balance?.left ?? 0}
-          bg={colors["red-100"]}
-        />
-        <DashboardValueBox
-          title="Total"
-          icon={<FiCreditCard size="100%"/>}
-          value={balance?.total ?? 0}
-          bg={colors["green-300"]}
-        />
+          <DashboardValueBox
+            title="Entradas"
+            icon={<FiArrowUpCircle size="100%"/>}
+            value={balance?.joined ?? 0}
+            bg={colors["orange-300"]}
+          />
+          <DashboardValueBox
+            title="Saídas"
+            icon={<FiArrowDownCircle size="100%"/>}
+            value={balance?.left ?? 0}
+            bg={colors["red-100"]}
+          />
+          <DashboardValueBox
+            title="Total"
+            icon={<FiCreditCard size="100%"/>}
+            value={balance?.total ?? 0}
+            bg={colors["green-300"]}
+          />
         </DashboardContainer>
       </DashboardHeader>
       <DashboardContent>
