@@ -6,6 +6,8 @@ export const TransactionSwitchBooleanWrapper = styled.div`
   > div {
     width: 100%;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
     margin-top: 10px;
   }
@@ -19,8 +21,15 @@ export const TransactionSwitchBooleanWrapper = styled.div`
   
   > div button {
     height: 40px;
-    font-size: 0;
-    opacity: 0.7;
+    min-width: 170px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: ${({ theme }) => theme.colors.white};
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
 
     > span {
       height: 30px;

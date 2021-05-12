@@ -86,7 +86,7 @@ function DashBoardCreate({ auth }) {
               label="Valor"
               name="value"
             />
-            <TransactionSwitchBoolean label="Subtração ou adição?" setState={setIsDecrement}/>
+            <TransactionSwitchBoolean setState={setIsDecrement}/>
 
             <TransactionButton text="Adicionar" type="submit"/>
           </TransactionForm>
