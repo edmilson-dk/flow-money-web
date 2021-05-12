@@ -10,11 +10,11 @@ export const DashboardDataPaginateWrapper = styled.div`
     width: 100%;
     height: 40px;
     font-size: 0;
-    opacity: 0.7;
+    opacity: 0.8;
     background-color: ${({ theme }) => theme.colors["orange-400"]};
 
     &:hover {
-      opacity: 0.8;
+      opacity: 0.9;
     }
     &:focus {
       opacity: 1;
@@ -22,6 +22,7 @@ export const DashboardDataPaginateWrapper = styled.div`
 
     &:disabled {
       opacity: 0.6;
+      cursor: not-allowed;
     };
 
     > span {
