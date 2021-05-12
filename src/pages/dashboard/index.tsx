@@ -4,7 +4,6 @@ import { ThemeContext } from "styled-components";
 
 import { DashboardNavBar } from "src/components/Dashboard/DashboardNavBar";
 import { DashboardTransactionsTable } from "src/components/Dashboard/DashboardTransactionsTable";
-import { TransactionProps } from "src/components/Dashboard/DashboardTransactionsTable/DashboardTransactionTableRow/types";
 import { DashboardValueBox } from "src/components/Dashboard/DashboardValueBox";
 import { useFetch } from "src/hooks/useFetch";
 import { PrivateRouter } from "src/router";
@@ -13,12 +12,7 @@ import { DashboardContainer } from "src/styles/components/Dashboard/DashboardCon
 import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { BalanceContext } from "src/contexts/BalanceContext";
 import { api } from "src/services/fetchApi";
-
-type BalanceType = {
-  left: number;
-  joined: number;
-  total: number;
-}
+import { BalanceType, TransactionsType } from "./types";
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
@@ -26,8 +20,10 @@ function DashBoard({ auth }) {
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
 
   const headers = { authorization: auth.authorizationString };
+
   const { data } = useFetch<BalanceType>({ url: "/session/balance", headers });
-  const { data: transactions } = useFetch<TransactionProps[]>({ url: "/session/transactions", headers });
+  const { data: t } = useFetch<TransactionsType>({ url: "/session/transactions", headers });
+  const { data: transactions, count } = t;
 
   useEffect(() => { setBalance(data) }, []);
   
@@ -36,7 +32,7 @@ function DashBoard({ auth }) {
       const response = await api.get("/session/balance", { headers });
       setBalance(response.data);
       setChangeTransactionState(false);
-    })() 
+    })();
   }, [ changeTransaction ]);
   
   return (
