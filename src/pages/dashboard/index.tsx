@@ -20,6 +20,7 @@ function DashBoard({ auth }) {
   const [ balance, setBalance ] = useState(null);
   const [ transactions, setTransactions ] = useState([]);
   const [ actualDataPage, setActualDataPage ] = useState(1);
+  const [ count, setCount ] = useState(10);
 
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
 
@@ -48,7 +49,10 @@ function DashBoard({ auth }) {
     await newDataFetch(page);
   }, [actualDataPage]);
 
-  useEffect(() => setTransactions(t?.data), [t]);
+  useEffect(() => {
+    setTransactions(t?.data);
+    setCount(t?.count);
+  }, [t]);
   useEffect(() => setBalance(data), []);
   
   useEffect(() => {
@@ -90,6 +94,8 @@ function DashBoard({ auth }) {
           <DashboardDataPaginate 
             nextCbFetch={handlerNextDataClick}
             prevCbFetch={handlerPrevDataClick}
+            prevDisabled={actualDataPage === 1}
+            nextDisabled={actualDataPage === Math.ceil(count / 10)}
           />
         </DashboardContainer>
       </DashboardContent>
