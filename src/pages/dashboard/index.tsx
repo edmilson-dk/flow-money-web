@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useCallback, useContext, useEffect, useState } from "react";
 import { FiArrowDownCircle, FiArrowUpCircle, FiCreditCard } from "react-icons/fi";
 import { ThemeContext } from "styled-components";
 
@@ -13,19 +13,43 @@ import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { BalanceContext } from "src/contexts/BalanceContext";
 import { api } from "src/services/fetchApi";
 import { BalanceType, TransactionsType } from "./types";
+import { DashboardDataPaginate } from "src/components/Dashboard/DashboardDataPaginate";
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
   const [ balance, setBalance ] = useState(null);
+  const [ transactions, setTransactions ] = useState([]);
+  const [ actualDataPage, setActualDataPage ] = useState(1);
+
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
 
   const headers = { authorization: auth.authorizationString };
 
   const { data } = useFetch<BalanceType>({ url: "/session/balance", headers });
   const { data: t } = useFetch<TransactionsType>({ url: "/session/transactions", headers });
-  const { data: transactions, count } = t;
 
-  useEffect(() => { setBalance(data) }, []);
+  async function newDataFetch(page: number){
+    const { data: t } = await api.get(
+      "/session/transactions", 
+      { headers, params: { page } });
+
+    setTransactions(t.data);
+  }
+
+  const handlerNextDataClick = useCallback(async () => {
+    const page = actualDataPage + 1;
+    setActualDataPage(page);
+    await newDataFetch(page);
+  }, [actualDataPage]);
+
+  const handlerPrevDataClick = useCallback(async () => {
+    const page = actualDataPage - 1;
+    setActualDataPage(page);
+    await newDataFetch(page);
+  }, [actualDataPage]);
+
+  useEffect(() => setTransactions(t?.data), [t]);
+  useEffect(() => setBalance(data), []);
   
   useEffect(() => {
     (async () => {
@@ -63,6 +87,10 @@ function DashBoard({ auth }) {
         <DashboardContainer>
           <TitlePrimary>Transações</TitlePrimary>
           <DashboardTransactionsTable data={transactions}/>
+          <DashboardDataPaginate 
+            nextCbFetch={handlerNextDataClick}
+            prevCbFetch={handlerPrevDataClick}
+          />
         </DashboardContainer>
       </DashboardContent>
     </DashboardNavBar>
