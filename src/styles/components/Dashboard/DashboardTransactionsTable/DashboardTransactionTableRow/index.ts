@@ -13,13 +13,13 @@ export const DashboardTransactionTableRowWrapper = styled.tr`
   }
 
   > td:first-child {
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
   }
 
   > td:last-child {
-    border-top-right-radius: 20px;
-    border-bottom-right-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 
   > td#isDecrement {

@@ -10,8 +10,12 @@ export const ButtonWrapper = styled.button<ButtonProps>`
   max-width: 180px;
   padding: 12px 0.625rem;
 
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: ${({ bg, theme }) => bg ?? theme.colors["violet-400"]};
+
+  &:hover {
+    filter: brightness(0.9);
+  }
 
   font-weight: 600;
   text-align: center;

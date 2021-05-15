@@ -11,7 +11,7 @@ export const DashboardValueBoxWrapper = styled.article<Props>`
   background-color: ${({ bg }) => bg};
   margin-top: 60px;
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.040);
-  border-radius: 20px;
+  border-radius: 10px;
 
   display: flex;
   flex-direction: column;
