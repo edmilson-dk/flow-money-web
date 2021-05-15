@@ -24,7 +24,7 @@ export const AuthInputWrappper = styled.div`
     outline: none;
     padding: 0 0.875rem;
     height: 50px;
-    border-radius: 20px;
+    border-radius: 10px;
     border: 2px solid ${({ theme }) => theme.colors["green-100"]};
 
     font-size: 1.125rem;

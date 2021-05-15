@@ -9,7 +9,7 @@ export const AuthButtonWrapper = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   margin-top: 30px;
 
   transition: background-color .4s ease-in-out;
