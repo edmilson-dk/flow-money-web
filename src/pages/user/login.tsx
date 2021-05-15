@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 
-import { AuthForm } from "src/components/AuthForm";
+import { AuthForm, AuthSignInOrSignUp } from "src/components/AuthForm/index";
 import { AuthButton } from "src/components/AuthForm/AuthButton";
 import { AuthInput } from "src/components/AuthForm/AuthInput";
 import { AuthUserContext } from "src/contexts/AuthUserContext";
@@ -39,6 +39,10 @@ function Login() {
           onChange={(e) => setPassword(e.target.value)}
           label="Password"
           name="password"
+        />
+        <AuthSignInOrSignUp 
+          message="Não possui conta? clique aqui."
+          router="/user/register"
         />
         <AuthButton 
           type="submit"
