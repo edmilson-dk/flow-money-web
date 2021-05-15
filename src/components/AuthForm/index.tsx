@@ -1,10 +1,7 @@
-import { FormEvent, ReactNode } from "react";
+import Link from "next/link";
 import { AuthFormWrapper } from "src/styles/components/AuthForm";
 
-type AuthFormProps = {
-  children: ReactNode;
-  onSubmit: (e: FormEvent) => void;
-};
+import { AuthFormProps, AuthSignInOrSignUpProps } from "./types";
 
 export function AuthForm({ children, onSubmit }: AuthFormProps) {
   return (
@@ -12,4 +9,12 @@ export function AuthForm({ children, onSubmit }: AuthFormProps) {
       { children }
     </AuthFormWrapper>
   );
+}
+
+export function AuthSignInOrSignUp({ message, router }: AuthSignInOrSignUpProps) {
+  return (
+    <Link href={router}>
+      <a id="authSignInOrSignUp">{ message }</a>
+    </Link>
+  )
 }
