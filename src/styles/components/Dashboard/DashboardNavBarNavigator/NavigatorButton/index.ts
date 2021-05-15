@@ -22,7 +22,7 @@ export const NavigatorButtonWrapper = styled.button<Props>`
   ${({ isActive, theme }) => isActive ? css`
     border: none;
   ` : css`
-    border: 1px solid ${theme.colors["violet-200"]};
+    border: 3px solid ${theme.colors["violet-200"]};
   `};
 
   > strong {
