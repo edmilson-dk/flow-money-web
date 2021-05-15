@@ -8,7 +8,7 @@ export const NavigatorButtonWrapper = styled.button<Props>`
   transition: all .3s ease-in-out;
   width: 70%;
   background-color: ${({ theme, isActive }) => isActive ? theme.colors.white : "transparent"};
-  border-radius: 30px;
+  border-radius: 10px;
 
   display: flex;
   justify-content: space-between;
