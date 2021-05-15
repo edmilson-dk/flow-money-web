@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
-import { FiHome, FiPlus } from "react-icons/fi";
+import { FiHome, FiLogOut, FiPlus } from "react-icons/fi";
+import { AuthToken } from "src/services/authToken";
 
 import { 
   DashboardNavBarContent, 
@@ -28,6 +29,14 @@ export function DashboardNavBar({ children }: DashboardNavBarProps) {
             icon={<FiPlus size="100%"/>}
             text="Adicionar"
           />
+          <button id="logout" type="button" onClick={AuthToken.logout}>
+            <span>
+              <FiLogOut size="100%"/>
+            </span>
+            <strong>
+              Sair
+            </strong>
+          </button>
         </DashboardNavBarNavigator>
       </DashboardNavBarMenu>
       <DashboardNavBarContent>
