@@ -53,6 +53,7 @@ function DashBoard({ auth }) {
     setTransactions(t?.data);
     setCount(t?.count);
   }, [t]);
+
   useEffect(() => setBalance(data), []);
   
   useEffect(() => {
@@ -87,6 +88,7 @@ function DashBoard({ auth }) {
           />
         </DashboardContainer>
       </DashboardHeader>
+      
       <DashboardContent>
         <DashboardContainer>
           <TitlePrimary>Transações</TitlePrimary>
