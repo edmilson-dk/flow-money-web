@@ -20,5 +20,5 @@ export const DashboardNavBarContent = styled.main`
   width: calc(100% - 280px);
   height: 100vh;
   overflow-y: auto;
-  background-color: ${({ theme }) => theme.colors["gray-100"]};
+  background-color: ${({ theme }) => theme.colors.white};
 `;
