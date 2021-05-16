@@ -14,7 +14,7 @@ export const TransactionInputWrappper = styled.div`
   > label {
     font-size: 1.25rem;
     font-weight: 500;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors["gray-200"]};
     text-align: left;
     margin-bottom: 5px;
   }
