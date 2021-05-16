@@ -2,24 +2,26 @@ import styled from "styled-components";
 
 export const DashboardTransactionTableRowWrapper = styled.tr`
   width: 100%;
-  box-shadow: 0 0 3px 3px rgba(0,0,0,0.010);
-  border-radius: 20px;
- 
+  
   > td {
     background-color: ${({ theme }) => theme.colors.white};
     color: ${({ theme }) => theme.colors["gray-200"]};
     height: 50px;
     padding: 0 1rem;
+    border-top: 2px solid ${({ theme }) => theme.colors["gray-100"]};
+    border-bottom: 2px solid ${({ theme }) => theme.colors["gray-100"]};
   }
 
   > td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+    border-left: 2px solid ${({ theme }) => theme.colors["gray-100"]};
   }
 
   > td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+    border-right: 2px solid ${({ theme }) => theme.colors["gray-100"]};
   }
 
   > td#isDecrement {
