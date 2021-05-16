@@ -8,7 +8,7 @@ import { useFetch } from "src/hooks/useFetch";
 import { PrivateRouter } from "src/router";
 import { api } from "src/services/fetchApi";
 import { BalanceType } from "./types";
-import { DashboardChartsWrapper } from "src/styles/pages/Dashboard/charts";
+import { DashboardChartsWrapper } from "src/styles/pages/dashboard/charts";
 import { DashboardContainer } from "src/styles/components/Dashboard/DashboardContainer";
 import { TitleThird } from "src/styles/components/Dashboard/DashboardTitle";
 

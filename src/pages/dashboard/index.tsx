@@ -7,7 +7,7 @@ import { DashboardTransactionsTable } from "src/components/Dashboard/DashboardTr
 import { DashboardValueBox } from "src/components/Dashboard/DashboardValueBox";
 import { useFetch } from "src/hooks/useFetch";
 import { PrivateRouter } from "src/router";
-import { DashboardHeader, DashboardContent } from "src/styles/pages/Dashboard/home";
+import { DashboardHeader, DashboardContent } from "src/styles/pages/dashboard/home";
 import { DashboardContainer } from "src/styles/components/Dashboard/DashboardContainer";
 import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { BalanceContext } from "src/contexts/BalanceContext";
