@@ -29,7 +29,7 @@ export const TransactionInputWrappper = styled.div`
 
     font-size: 1.125rem;
     font-weight: 400;
-    color: ${({ theme }) => theme.colors.text};
+    color: ${({ theme }) => theme.colors["gray-200"]};
     background-color: transparent;
 
     transition: border-radius .4s ease-in-out;
