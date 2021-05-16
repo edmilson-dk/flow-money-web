@@ -1,5 +1,6 @@
 import React from "react";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
+
 import { DashboardDataPaginateWrapper } from "src/styles/components/Dashboard/DashboardDataPaginate";
 import { DashboardDataPaginateProps } from "./types";
 

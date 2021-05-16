@@ -1,10 +1,9 @@
 import { useContext, useRef } from "react";
 import {  FiTrash } from "react-icons/fi";
-import { BalanceContext } from "src/contexts/BalanceContext";
 
+import { BalanceContext } from "src/contexts/BalanceContext";
 import { AuthToken } from "src/services/authToken";
 import { api } from "src/services/fetchApi";
-
 import { DashboardTransactionTableRowWrapper } from "src/styles/components/Dashboard/DashboardTransactionsTable/DashboardTransactionTableRow";
 import { formatDate } from "src/utils/formatDate";
 import { TransactionProps } from "./types";

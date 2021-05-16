@@ -1,10 +1,5 @@
 import { ServiceBoxWrapper } from "src/styles/components/Home/Services/ServiceBox";
-
-type ServiceBoxProps = {
-  title: string;
-  imgSrc: string;
-  imgAlt?: string;
-};
+import { ServiceBoxProps } from "./types";
 
 export function ServiceBox({ title, imgSrc, imgAlt }: ServiceBoxProps) {
   return (

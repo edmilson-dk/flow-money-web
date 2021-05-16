@@ -1,7 +1,6 @@
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 import { TransactionSwitchBooleanWrapper } from "src/styles/components/Dashboard/DashboardAddTransactionForm/switchBoolean";
-
 import { TransactionSwitchBooleanProps } from "./types";
 
 export function TransactionSwitchBoolean({ setState }: TransactionSwitchBooleanProps) {

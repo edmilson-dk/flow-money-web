@@ -1,6 +1,7 @@
 import { useContext } from "react";
-import { SwitchThemeButtonWrapper } from "src/styles/components/generic/SwitchThemeButton";
 import { ThemeContext } from "styled-components";
+
+import { SwitchThemeButtonWrapper } from "src/styles/components/generic/SwitchThemeButton";
 
 type SwitchThemeButtonProps = {
   toggleTheme: () => void;

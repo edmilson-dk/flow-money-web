@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { ButtonWrapper } from "src/styles/components/Home/generic/Button";
 import { ButtonProps } from "./types";
 

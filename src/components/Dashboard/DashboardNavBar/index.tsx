@@ -2,7 +2,6 @@ import { ReactNode } from "react";
 import { FiBarChart2, FiHome, FiLogOut, FiPlus } from "react-icons/fi";
 
 import { AuthToken } from "src/services/authToken";
-
 import { 
   DashboardNavBarContent, 
   DashboardNavBarMenu, 

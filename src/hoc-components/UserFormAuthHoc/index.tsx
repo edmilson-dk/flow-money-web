@@ -1,4 +1,5 @@
 import { useContext } from "react";
+
 import { Header } from "src/components/Home/generic/Header"
 import { CustomThemeContext } from "src/contexts/CustomThemeContext";
 import { Container } from "src/styles/components/Container";

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { AuthFormWrapper } from "src/styles/components/AuthForm";
 
+import { AuthFormWrapper } from "src/styles/components/AuthForm";
 import { AuthFormProps, AuthSignInOrSignUpProps } from "./types";
 
 export function AuthForm({ children, onSubmit }: AuthFormProps) {

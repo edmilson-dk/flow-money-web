@@ -1,8 +1,8 @@
-
 import { useContext } from "react";
 import { FiCheckCircle, FiX, FiXCircle } from "react-icons/fi";
+import { ThemeContext } from "styled-components";
+
 import { DashboardModalSuccessOrErrorContent, DashboardModalSuccessOrErrorWrapper } from "src/styles/components/Dashboard/DashboardModalSuccessOrError";
-import { ThemeContext, useTheme } from "styled-components";
 import { DashboardModalSuccessOrErrorProps } from "./types";
 
 export function DashboardModalSuccessOrError({ title, message, isSuccess, setIsOpen }: DashboardModalSuccessOrErrorProps) {
@@ -24,7 +24,7 @@ export function DashboardModalSuccessOrError({ title, message, isSuccess, setIsO
         </span>
 
         <h3>{ title }</h3>
-        <p>{ message } </p>
+        <p>{ message }</p>
       </DashboardModalSuccessOrErrorContent>
     </DashboardModalSuccessOrErrorWrapper>
   );
