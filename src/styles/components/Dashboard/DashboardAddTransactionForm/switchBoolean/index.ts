@@ -47,14 +47,14 @@ export const TransactionSwitchBooleanWrapper = styled.div`
   }
 
   > div button:first-child {
-    border-top-left-radius: 30px;
-    border-bottom-left-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
     background-color:  ${({ theme }) => theme.colors["green-400"]};
   }
 
   > div button:last-child {
-    border-top-right-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
     background-color:  ${({ theme }) => theme.colors["red-200"]};
   }
 `;
