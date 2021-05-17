@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { FiBarChart2, FiHome, FiLogOut, FiPlus } from "react-icons/fi";
+import { FiBarChart2, FiHome, FiList, FiLogOut, FiPlus } from "react-icons/fi";
 
 import { AuthToken } from "src/services/authToken";
 import { 
@@ -23,6 +23,11 @@ export function DashboardNavBar({ children }: DashboardNavBarProps) {
             router="/dashboard"
             icon={<FiHome size="100%"/>}
             text="Home"
+          />
+          <NavigatorButton 
+            router="/dashboard/transactions"
+            icon={<FiList size="100%"/>}
+            text="Transações"
           />
           <NavigatorButton 
             router="/dashboard/create"
