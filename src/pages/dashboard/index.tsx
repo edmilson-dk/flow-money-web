@@ -13,14 +13,11 @@ import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { BalanceContext } from "src/contexts/BalanceContext";
 import { api } from "src/services/fetchApi";
 import { BalanceType, TransactionsType } from "./types";
-import { DashboardDataPaginate } from "src/components/Dashboard/DashboardDataPaginate";
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
   const [ balance, setBalance ] = useState(null);
   const [ transactions, setTransactions ] = useState([]);
-  const [ actualDataPage, setActualDataPage ] = useState(1);
-  const [ count, setCount ] = useState(10);
 
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
 
@@ -29,30 +26,7 @@ function DashBoard({ auth }) {
   const { data } = useFetch<BalanceType>({ url: "/session/balance", headers });
   const { data: t } = useFetch<TransactionsType>({ url: "/session/transactions", headers });
 
-  async function newDataFetch(page: number){
-    const { data: t } = await api.get(
-      "/session/transactions", 
-      { headers, params: { page } });
-
-    setTransactions(t.data);
-  }
-
-  const handlerNextDataClick = useCallback(async () => {
-    const page = actualDataPage + 1;
-    setActualDataPage(page);
-    await newDataFetch(page);
-  }, [actualDataPage]);
-
-  const handlerPrevDataClick = useCallback(async () => {
-    const page = actualDataPage - 1;
-    setActualDataPage(page);
-    await newDataFetch(page);
-  }, [actualDataPage]);
-
-  useEffect(() => {
-    setTransactions(t?.data);
-    setCount(t?.count);
-  }, [t]);
+  useEffect(() => setTransactions(t?.data), [t]);
 
   useEffect(() => setBalance(data), []);
   
@@ -91,14 +65,8 @@ function DashBoard({ auth }) {
       
       <DashboardContent>
         <DashboardContainer>
-          <TitlePrimary>Transações</TitlePrimary>
+          <TitlePrimary>Transações recentes</TitlePrimary>
           <DashboardTransactionsTable data={transactions}/>
-          <DashboardDataPaginate 
-            nextCbFetch={handlerNextDataClick}
-            prevCbFetch={handlerPrevDataClick}
-            prevDisabled={actualDataPage === 1}
-            nextDisabled={actualDataPage === Math.ceil(count / 10)}
-          />
         </DashboardContainer>
       </DashboardContent>
     </DashboardNavBar>
