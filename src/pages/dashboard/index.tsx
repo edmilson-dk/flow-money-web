@@ -16,10 +16,9 @@ import { BalanceType, TransactionsType } from "./types";
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
-  const [ balance, setBalance ] = useState(null);
-  const [ transactions, setTransactions ] = useState([]);
-
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
+  const [ balance, setBalance ] = useState({} as BalanceType);
+  const [ transactions, setTransactions ] = useState([]);
 
   const headers = { authorization: auth.authorizationString };
 
