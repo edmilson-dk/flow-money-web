@@ -16,7 +16,7 @@ export const NavigatorButtonWrapper = styled.button<Props>`
   padding: 0.5rem 1rem;
 
   & + & {
-    margin-top: 30px;
+    margin-top: 20px;
   }
 
   ${({ isActive, theme }) => isActive ? css`
