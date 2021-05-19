@@ -9,6 +9,7 @@ import { TransactionButton } from "src/components/Dashboard/DashboardAddTransact
 import { TransactionSwitchBoolean } from "src/components/Dashboard/DashboardAddTransactionForm/switchBoolean";
 import { DashboardModalSuccessOrError } from "src/components/Dashboard/DashboardModalSuccessOrError";
 import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
+import { formatMoneyValue } from "src/utils/formatMoneyValue";
 
 function DashBoardCreate({ auth }) {
   const [ title, setTitle ] = useState("");
@@ -80,8 +81,8 @@ function DashBoardCreate({ auth }) {
               name="category"
             />
             <TransactionInput 
-              type="number"
-              onChange={(e) => setValue(e.target.value)}
+              type="string"
+              onChange={(e) => setValue(formatMoneyValue(e.target.value))}
               label="Valor"
               name="value"
             />
