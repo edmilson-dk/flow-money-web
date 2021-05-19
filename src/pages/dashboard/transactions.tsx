@@ -59,7 +59,7 @@ function DashBoardTransactions({ auth }) {
     <DashboardNavBar>  
       <DashboardContent>
         <DashboardContainer>
-          <DashboardTransactionsHeader id="transactions-header">
+          <DashboardTransactionsHeader>
             <TitlePrimary>Transações</TitlePrimary>
             
             <div id="input-search">
