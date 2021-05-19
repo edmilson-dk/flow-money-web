@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 import { DashboardNavBar } from "src/components/Dashboard/DashboardNavBar";
 import { DashboardTransactionsTable } from "src/components/Dashboard/DashboardTransactionsTable";
@@ -17,29 +17,37 @@ function DashBoardTransactions({ auth }) {
   const [ transactions, setTransactions ] = useState([]);
   const [ actualDataPage, setActualDataPage ] = useState(1);
   const [ count, setCount ] = useState(10);
+  const searchInputRef = useRef<HTMLInputElement>(null);
 
   const headers = { authorization: auth.authorizationString };
 
   const { data: t } = useFetch<TransactionsType>({ url: "/session/transactions", headers });
 
-  async function newDataFetch(page: number){
+  async function newDataFetch(withPage: boolean, page: number, title_category = ""){
+    const query = withPage ? { page } : { title_category };
+
     const { data: t } = await api.get(
       "/session/transactions", 
-      { headers, params: { page } });
+      { headers, params: { ...query } });
 
     setTransactions(t.data);
+    setCount(t?.count);
+  }
+
+  async function handlerSearchInput() {
+    await newDataFetch(false, 1, searchInputRef.current?.value);
   }
 
   const handlerNextDataClick = useCallback(async () => {
     const page = actualDataPage + 1;
     setActualDataPage(page);
-    await newDataFetch(page);
+    await newDataFetch(true, page);
   }, [actualDataPage]);
 
   const handlerPrevDataClick = useCallback(async () => {
     const page = actualDataPage - 1;
     setActualDataPage(page);
-    await newDataFetch(page);
+    await newDataFetch(true, page);
   }, [actualDataPage]);
 
   useEffect(() => {
@@ -55,8 +63,8 @@ function DashBoardTransactions({ auth }) {
             <TitlePrimary>Transações</TitlePrimary>
             
             <div id="input-search">
-              <input type="text" name="search" placeholder="Busque por titúlo ou catégoria"/>
-              <button type="button">
+              <input ref={searchInputRef} type="text" name="search" placeholder="Busque por titúlo ou catégoria"/>
+              <button type="button" onClick={handlerSearchInput}>
                 <span>
                   <FiSearch size="100%"/>
                 </span>
