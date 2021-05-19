@@ -10,6 +10,7 @@ export const TitlePrimary = styled.h2`
   text-align: left;
   margin-bottom: 30px;
   position: relative;
+  
 `;
 
 export const TitleThird = styled.h3<TitleThirdProps>`
