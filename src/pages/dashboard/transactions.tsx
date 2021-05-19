@@ -10,6 +10,8 @@ import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { api } from "src/services/fetchApi";
 import { TransactionsType } from "./types";
 import { DashboardDataPaginate } from "src/components/Dashboard/DashboardDataPaginate";
+import { FiSearch } from "react-icons/fi";
+import { DashboardTransactionsHeader } from "src/styles/pages/dashboard/transactions";
 
 function DashBoardTransactions({ auth }) {
   const [ transactions, setTransactions ] = useState([]);
@@ -49,7 +51,19 @@ function DashBoardTransactions({ auth }) {
     <DashboardNavBar>  
       <DashboardContent>
         <DashboardContainer>
-          <TitlePrimary>Transações</TitlePrimary>
+          <DashboardTransactionsHeader id="transactions-header">
+            <TitlePrimary>Transações</TitlePrimary>
+            
+            <div id="input-search">
+              <input type="text" name="search" placeholder="Busque por titúlo ou catégoria"/>
+              <button type="button">
+                <span>
+                  <FiSearch size="100%"/>
+                </span>
+              </button>
+            </div>
+          </DashboardTransactionsHeader>
+
           <DashboardTransactionsTable data={transactions}/>
           <DashboardDataPaginate 
             nextCbFetch={handlerNextDataClick}
