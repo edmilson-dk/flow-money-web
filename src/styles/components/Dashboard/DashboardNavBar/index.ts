@@ -5,6 +5,10 @@ export const DashboardNavBarWrapper = styled.section`
   min-height: 100vh;
   padding: 0;
   display: flex;
+
+  @media screen and (max-width: 1080px) {
+    flex-direction: column;
+  }
 `;
 
 export const DashboardNavBarMenu = styled.aside`
@@ -14,6 +18,11 @@ export const DashboardNavBarMenu = styled.aside`
   z-index: 9999;
   padding: 20px 0;
   position: relative;
+
+  @media screen and (max-width: 1080px) {
+    min-height: auto;
+    width: 100%;
+  }
 `;
 
 export const DashboardNavBarContent = styled.main`
@@ -21,4 +30,8 @@ export const DashboardNavBarContent = styled.main`
   height: 100vh;
   overflow-y: auto;
   background-color: ${({ theme }) => theme.colors.white};
+
+  @media screen and (max-width: 1080px) {
+    width: 100%;
+  }
 `;
