@@ -12,6 +12,7 @@ import { TransactionsType } from "./types";
 import { DashboardDataPaginate } from "src/components/Dashboard/DashboardDataPaginate";
 import { FiSearch } from "react-icons/fi";
 import { DashboardTransactionsHeader } from "src/styles/pages/dashboard/transactions";
+import { DashboardDataFilter } from "src/components/Dashboard/DashboardDataFilter";
 
 function DashBoardTransactions({ auth }) {
   const [ transactions, setTransactions ] = useState([]);
@@ -71,6 +72,7 @@ function DashBoardTransactions({ auth }) {
               </button>
             </div>
           </DashboardTransactionsHeader>
+          <DashboardDataFilter />
 
           <DashboardTransactionsTable data={transactions}/>
           <DashboardDataPaginate 
