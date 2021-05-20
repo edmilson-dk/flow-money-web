@@ -58,4 +58,16 @@ export const DashboardNavBarNavigatorWrapper = styled.nav`
       }
     }
   }
+
+  @media screen and (max-width: 1080px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 30px;
+
+    > button#logout {
+      position: static;
+    }
+  }
 `;

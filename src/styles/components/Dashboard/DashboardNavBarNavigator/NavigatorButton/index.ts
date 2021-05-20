@@ -39,4 +39,10 @@ export const NavigatorButtonWrapper = styled.button<Props>`
       stroke: ${({ isActive, theme }) => isActive ? theme.colors["green-300"] : theme.colors.white};
     }
   }
+
+  @media screen and (max-width: 1080px) {
+    & + & {
+      margin-top: 0;
+    }
+  }
 `;
