@@ -1,5 +1,7 @@
 import { FiSettings } from "react-icons/fi";
 
+import { DashboardDataFilterWrapper } from "src/styles/components/Dashboard/DashboardDataFilter";
+
 export function DashboardDataFilter() {
   return (
     <DashboardDataFilterWrapper>
@@ -8,7 +10,7 @@ export function DashboardDataFilter() {
           Filtro
         </strong>
         <span>
-          <FiSettings />
+          <FiSettings size="100%"/>
         </span>
       </button>
     </DashboardDataFilterWrapper>
