@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const DashboardHeader = styled.header`
   width: 100%;
-  height: 180px;
+  height: auto;
   background-color: ${({ theme }) => theme.colors["violet-400"]};
   position: relative;
 
@@ -10,6 +10,17 @@ export const DashboardHeader = styled.header`
     display: grid;
     grid-template-columns: repeat(3,1fr);
     column-gap: 1.875rem;
+    padding: 20px 60px;
+  }
+
+  @media screen and (max-width: 860px) {
+    > div {
+     overflow-x: scroll;
+     padding-bottom: 30px;
+     column-gap: 30px;
+     justify-items: end;
+     max-width: 100%;
+    }
   }
 `;
 

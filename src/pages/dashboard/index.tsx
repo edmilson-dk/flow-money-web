@@ -1,5 +1,5 @@
 import { useCallback, useContext, useEffect, useState } from "react";
-import { FiArrowDownCircle, FiArrowUpCircle, FiCreditCard } from "react-icons/fi";
+import { FiArrowDownCircle, FiArrowUpCircle, FiCreditCard, FiMenu } from "react-icons/fi";
 import { ThemeContext } from "styled-components";
 
 import { DashboardNavBar } from "src/components/Dashboard/DashboardNavBar";
@@ -13,10 +13,13 @@ import { TitlePrimary } from "src/styles/components/Dashboard/DashboardTitle";
 import { BalanceContext } from "src/contexts/BalanceContext";
 import { api } from "src/services/fetchApi";
 import { BalanceType, TransactionsType } from "./types";
+import { useNavBarContext } from "src/contexts/NavbarContext";
 
 function DashBoard({ auth }) {
   const { colors } = useContext(ThemeContext);
+  const { toggleMenu } = useNavBarContext();
   const { changeTransaction, setChangeTransactionState } = useContext(BalanceContext);
+
   const [ balance, setBalance ] = useState({} as BalanceType);
   const [ transactions, setTransactions ] = useState([]);
 
@@ -41,6 +44,7 @@ function DashBoard({ auth }) {
     <DashboardNavBar>
       <DashboardHeader>
         <DashboardContainer>
+         
           <DashboardValueBox
             title="Entradas"
             icon={<FiArrowUpCircle size="100%"/>}

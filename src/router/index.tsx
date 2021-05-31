@@ -6,6 +6,7 @@ import Router from "next/router";
 
 import { AuthToken, TOKEN_STORED_KEY } from "src/services/authToken";
 import { BalanceContextProvider } from "src/contexts/BalanceContext";
+import { NavBarContextProvider } from "src/contexts/NavbarContext";
 
 export type AuthProps = {
   token: string;
@@ -67,7 +68,9 @@ export function PrivateRouter(WrappedComponent: any) {
     render() {
       return (
         <BalanceContextProvider>
-          <WrappedComponent {...this.state }/>
+          <NavBarContextProvider>
+            <WrappedComponent {...this.state }/>
+          </NavBarContextProvider>
         </BalanceContextProvider>
       );
     }

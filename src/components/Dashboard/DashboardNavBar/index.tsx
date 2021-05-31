@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
-import { FiBarChart2, FiHome, FiList, FiLogOut, FiPlus } from "react-icons/fi";
+import { FiBarChart2, FiHome, FiList, FiLogOut, FiMenu, FiPlus } from "react-icons/fi";
 
+import { useNavBarContext } from "src/contexts/NavbarContext";
 import { AuthToken } from "src/services/authToken";
 import { 
   DashboardNavBarContent, 
@@ -15,9 +16,19 @@ type DashboardNavBarProps = {
 };
 
 export function DashboardNavBar({ children }: DashboardNavBarProps) {
+  const { isOpenMenuState, toggleMenu } = useNavBarContext();
+
   return (
     <DashboardNavBarWrapper>
-      <DashboardNavBarMenu>
+      <button 
+        id="control-menu-btn"
+        type="button" 
+        onClick={toggleMenu}>
+        <span>
+          <FiMenu />
+        </span>
+      </button>
+      <DashboardNavBarMenu displayResponsive={isOpenMenuState}>
         <DashboardNavBarNavigator>
           <NavigatorButton 
             router="/dashboard"

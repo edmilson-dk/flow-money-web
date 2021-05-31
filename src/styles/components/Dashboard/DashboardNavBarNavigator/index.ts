@@ -70,4 +70,14 @@ export const DashboardNavBarNavigatorWrapper = styled.nav`
       position: static;
     }
   }
+
+  @media screen and (max-width: 860px) {
+    flex-direction: column;
+    justify-content: center;
+
+    > button {
+      width: 100%;
+      max-width: 260px;
+    }
+  }
 `;

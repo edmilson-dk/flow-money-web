@@ -9,7 +9,6 @@ export const DashboardValueBoxWrapper = styled.article<Props>`
   padding: 1rem;
   height: 140px;
   background-color: ${({ bg }) => bg};
-  margin-top: 60px;
   box-shadow: 0 0 3px 3px rgba(0,0,0,0.040);
   border-radius: 10px;
 
